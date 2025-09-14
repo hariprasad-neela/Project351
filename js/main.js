@@ -5,6 +5,8 @@ import * as UI from './ui.js';
 let currentUser = null;
 let unsubscribeAssets = null;
 
+alert('hello');
+
 // wire auth state
 Auth.onAuthState(async user => {
   currentUser = user;
