@@ -1,0 +1,7 @@
+body { font-family: system-ui, Arial; margin: 0; padding: 16px; background:#f6f7fb; color:#111; }
+#app { max-width:900px; margin:0 auto; }
+section { margin-top: 12px; }
+#asset-list { margin-top: 12px; display:flex; flex-direction:column; gap:8px; }
+.asset { background:white; padding:12px; border-radius:8px; box-shadow:0 1px 3px rgba(0,0,0,.06); display:flex; justify-content:space-between; }
+button { cursor:pointer; }
+dialog { padding:12px; border-radius:8px; }
