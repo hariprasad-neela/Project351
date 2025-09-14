@@ -1,1 +1,69 @@
-Sri Matre Namaha
+<!-- Sri Matre Namaha -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Portfolio Manager</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app">
+    <!-- AUTH SCREEN -->
+    <section id="auth-screen">
+      <h1>Portfolio Manager</h1>
+      <div id="auth-forms">
+        <form id="sign-up-form">
+          <h2>Sign up</h2>
+          <input type="email" id="su-email" placeholder="Email" required />
+          <input type="password" id="su-pass" placeholder="Password (min 6)" required />
+          <button type="submit">Create account</button>
+        </form>
+
+        <form id="sign-in-form">
+          <h2>Sign in</h2>
+          <input type="email" id="si-email" placeholder="Email" required />
+          <input type="password" id="si-pass" placeholder="Password" required />
+          <button type="submit">Sign in</button>
+        </form>
+
+        <div>
+          <button id="google-signin">Sign in with Google</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- DASHBOARD -->
+    <section id="dashboard" hidden>
+      <header>
+        <h2>Your Portfolio</h2>
+        <button id="sign-out-btn">Sign out</button>
+      </header>
+
+      <section id="summary">
+        <div>Total value: <span id="total-value">—</span></div>
+        <button id="add-asset-btn">Add Asset</button>
+      </section>
+
+      <section id="asset-list"></section>
+
+      <!-- Add Asset Modal (simple) -->
+      <dialog id="asset-dialog">
+        <form method="dialog" id="asset-form">
+          <h3 id="asset-dialog-title">Add Asset</h3>
+          <input id="asset-symbol" placeholder="Symbol (e.g., AAPL)" required />
+          <input id="asset-name" placeholder="Name" />
+          <input id="asset-qty" type="number" step="any" placeholder="Quantity" required />
+          <input id="asset-price" type="number" step="any" placeholder="Price per unit" />
+          <menu>
+            <button value="cancel">Cancel</button>
+            <button id="save-asset-btn" value="confirm">Save</button>
+          </menu>
+        </form>
+      </dialog>
+    </section>
+  </div>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
