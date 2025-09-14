@@ -1,9 +1,9 @@
 // initialize Firebase and export auth & db
 // Replace the SDK urls' version (9.X.X) with the version you want/see in Firebase docs.
 
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.X.X/firebase-app.js";
-import { getAuth } from "https://www.gstatic.com/firebasejs/9.X.X/firebase-auth.js";
-import { getFirestore } from "https://www.gstatic.com/firebasejs/9.X.X/firebase-firestore.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
+import { getAuth } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js";
+import { getFirestore } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDXu-8_142Dtznjefu5WcnrfN6NfcnUQ0E",
