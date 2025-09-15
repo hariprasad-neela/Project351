@@ -5,8 +5,6 @@ import * as UI from './ui.js';
 let currentUser = null;
 let unsubscribeAssets = null;
 
-alert('hello');
-
 // wire auth state
 Auth.onAuthState(async user => {
   currentUser = user;
@@ -33,7 +31,6 @@ document.getElementById('sign-up-form').addEventListener('submit', async e => {
   const pass = e.target.querySelector('#su-pass').value;
   try {
     alert('signup',email,pass);
-    await Auth.signUp(email, pass);
   } catch (err) {
     alert(err.message);
   }
