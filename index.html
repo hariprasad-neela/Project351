@@ -17,7 +17,26 @@
   <!-- Custom CSS -->
   <link rel="stylesheet" href="./css/custom.css">
 </head>
-<body class="hold-transition sidebar-mini layout-fixed">
+<body class="hold-transition sidebar-mini layout-fixed"><div id="auth-section" class="d-flex align-items-center justify-content-center vh-100">
+  <div class="card p-4" style="min-width:300px;">
+    <h3 class="mb-3">Sign In</h3>
+    <form id="sign-in-form">
+      <div class="mb-2">
+        <input id="si-email" type="email" class="form-control" placeholder="Email" required>
+      </div>
+      <div class="mb-2">
+        <input id="si-pass" type="password" class="form-control" placeholder="Password" required>
+      </div>
+      <button type="submit" class="btn btn-primary w-100">Sign In</button>
+    </form>
+    <button id="google-signin" class="btn btn-outline-danger w-100 mt-2"><i class="fab fa-google"></i> Sign in with Google</button>
+  </div>
+</div>
+
+<!-- Dashboard wrapper -->
+<div id="dashboard-wrapper" class="wrapper" style="display:none;">
+  <!-- [Navbar + Sidebar + Dashboard content from my previous AdminLTE scaffold goes here] -->
+
 <div class="wrapper">
 
   <!-- Navbar -->
@@ -112,6 +131,7 @@
       </div>
     </section>
   </div>
+</div>
 </div>
 
 <!-- Bootstrap & AdminLTE JS -->
