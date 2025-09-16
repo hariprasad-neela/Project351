@@ -87,3 +87,27 @@ document.getElementById('asset-list').addEventListener('click', async (e) => {
     UI.openAssetDialog({ mode: 'edit', asset: { id } });
   }
 });
+
+function showDashboard() {
+  document.getElementById("auth-section").style.display = "none";
+  document.getElementById("dashboard-wrapper").style.display = "block";
+}
+
+function showAuth() {
+  document.getElementById("auth-section").style.display = "flex";
+  document.getElementById("dashboard-wrapper").style.display = "none";
+}
+
+Auth.onAuthState(async user => {
+  currentUser = user;
+  if (user) {
+    showDashboard();
+    if (unsubscribeAssets) unsubscribeAssets();
+    unsubscribeAssets = DB.listenAssets(user.uid, assets => UI.renderAssets(assets));
+  } else {
+    showAuth();
+    if (unsubscribeAssets) unsubscribeAssets();
+    unsubscribeAssets = null;
+  }
+});
+
