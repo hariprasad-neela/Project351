@@ -41,6 +41,7 @@ document.getElementById('sign-in-form').addEventListener('submit', async e => {
   const email = e.target.querySelector('#si-email').value;
   const pass = e.target.querySelector('#si-pass').value;
   try {
+    alert('signup',email,pass);
     await Auth.signIn(email, pass);
   } catch (err) {
     alert(err.message);
