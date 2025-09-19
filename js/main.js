@@ -37,17 +37,36 @@ document.getElementById('sign-up-form').addEventListener('submit', async e => {
   }
 });
 
-document.getElementById('sign-in-form').addEventListener('submit', async e => {
-  e.preventDefault();
-  const email = e.target.querySelector('#si-email').value;
-  const pass = e.target.querySelector('#si-pass').value;
-  try {
-    alert('signup',email,pass);
-    await Auth.signIn(email, pass);
-  } catch (err) {
-    alert(err.message);
+window.addEventListener("DOMContentLoaded", () => {
+  // Sign In handler
+  const signInForm = document.getElementById('sign-in-form');
+  if (signInForm) {
+    signInForm.addEventListener('submit', async e => {
+      e.preventDefault();
+      const email = e.target.querySelector('#si-email').value;
+      const pass = e.target.querySelector('#si-pass').value;
+      try {
+        await Auth.signIn(email, pass);
+        alert("Signed in successfully");
+      } catch (err) {
+        alert(err.message);
+      }
+    });
+  }
+
+  // Google Sign-In handler
+  const googleBtn = document.getElementById('google-signin');
+  if (googleBtn) {
+    googleBtn.addEventListener('click', async () => {
+      try {
+        await Auth.signInWithGoogle();
+      } catch (err) {
+        alert(err.message);
+      }
+    });
   }
 });
+
 
 document.getElementById('google-signin').addEventListener('click', async () => {
   try {
