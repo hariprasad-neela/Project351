@@ -31,6 +31,7 @@ document.getElementById('sign-up-form').addEventListener('submit', async e => {
   const pass = e.target.querySelector('#su-pass').value;
   try {
     alert('signup',email,pass);
+    await Auth.signUp(email, pass);
   } catch (err) {
     alert(err.message);
   }
