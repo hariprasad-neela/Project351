@@ -8,6 +8,8 @@ let unsubscribeAssets = null;
 
 // wire auth state
 Auth.onAuthState(async user => {
+  console.log("user",user);
+  
   currentUser = user;
   if (user) {
     UI.showDashboard();
