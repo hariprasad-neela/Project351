@@ -83,7 +83,7 @@ document.getElementById('sign-out-btn').addEventListener('click', async () => {
 
 // add asset UI
 document.getElementById('add-asset-btn').addEventListener('click', () => UI.openAssetDialog({mode:'add'}));
-document.getElementById('asset-form').addEventListener('submit', async (e) => {
+document.getElementById('asset-form')?.addEventListener('submit', async (e) => {
   e.preventDefault();
   if (!currentUser) return alert('Not signed in');
   const symbol = document.getElementById('asset-symbol').value.trim();
