@@ -4,7 +4,7 @@ import * as UI from './ui.js';
 
 let currentUser = null;
 let unsubscribeAssets = null;
-alert("hello")
+
 
 // wire auth state
 Auth.onAuthState(async user => {
@@ -26,7 +26,7 @@ Auth.onAuthState(async user => {
 });
 
 // AUTH form handlers
-document.getElementById('sign-up-form').addEventListener('submit', async e => {
+document.getElementById('sign-up-form')?.addEventListener('submit', async e => {
   e.preventDefault();
   const email = e.target.querySelector('#su-email').value;
   const pass = e.target.querySelector('#su-pass').value;
