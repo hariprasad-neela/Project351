@@ -1,8 +1,8 @@
 import { formatCurrency, calcTotalValue } from './utils.js';
 
 const el = {
-  authScreen: document.getElementById('auth-screen'),
-  dashboard: document.getElementById('dashboard'),
+  authScreen: document.getElementById('auth-section'),
+  dashboard: document.getElementById('dashboard-wrapper'),
   totalValue: document.getElementById('total-value'),
   assetList: document.getElementById('asset-list'),
   assetDialog: document.getElementById('asset-dialog'),
