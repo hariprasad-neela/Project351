@@ -11,13 +11,14 @@ const el = {
 };
 
 export function showAuth() {
-  el.authScreen.hidden = false;
-  el.dashboard.hidden = true;
+  el.authScreen.style.visibility = "hidden";
+  el.dashboard.style.visibility = "visible";
+
 }
 
 export function showDashboard() {
-  el.authScreen.hidden = true;
-  el.dashboard.hidden = false;
+   el.authScreen.style.visibility = "visible";
+  el.dashboard.style.visibility = "hidden";
 }
 
 export function renderAssets(assets) {
