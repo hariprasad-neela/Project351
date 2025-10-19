@@ -97,20 +97,26 @@ document.getElementById('asset-form')?.addEventListener('submit', async (e) => {
 });
 
 // delegate edit/delete
-document.getElementById('asset-list').addEventListener('click', async (e) => {
-  const id = e.target.dataset.id;
-  if (!id) return;
-  if (e.target.classList.contains('delete-asset')) {
-    if (!currentUser) return;
-    if (confirm('Delete asset?')) {
+document.getElementById('dashboard').addEventListener('click', async (e) => {
+  const editBtn = e.target.closest('.edit-asset');
+  const deleteBtn = e.target.closest('.delete-asset');
+
+  if (deleteBtn) {
+    const id = deleteBtn.dataset.id;
+    if (id && currentUser && confirm('Delete asset?')) {
       await DB.deleteAsset(currentUser.uid, id);
     }
-  } else if (e.target.classList.contains('edit-asset')) {
-    // fetch asset, open dialog for edit
-    // For brevity we'll open dialog and let user re-save; implement updateAsset similarly
-    UI.openAssetDialog({ mode: 'edit', asset: { id } });
+  }
+
+  if (editBtn) {
+    const id = editBtn.dataset.id;
+    if (id) {
+      const asset = await DB.getAsset(currentUser.uid, id);
+      UI.openAssetDialog({ mode: 'edit', asset: { id, ...asset } });
+    }
   }
 });
+
 
 function showDashboard() {
   document.getElementById("auth-section").style.display = "none";
